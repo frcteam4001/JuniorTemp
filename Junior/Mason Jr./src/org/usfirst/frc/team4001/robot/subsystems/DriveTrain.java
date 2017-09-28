@@ -18,17 +18,25 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class DriveTrain extends Subsystem {
 
     // motors	
-	private final Victor leftMotor = new Victor(0);
-	private final Victor rightMotor = new Victor(1);
-	
-	//drive
-	private final RobotDrive myDrive = new RobotDrive(leftMotor, rightMotor);
+	//motors
+	private final Victor leftMotor;
+	private final Victor rightMotor;
 	
 	//encoders
 	private Encoder leftDriveEncoder;
 	private Encoder rightDriveEncoder;
 	
-	//
+	public DriveTrain(){
+		//Initialize motor
+		leftMotor = new Victor(0);
+		rightMotor = new Victor(1);
+		
+		//drive!
+		RobotDrive drive = new RobotDrive(leftMotor, rightMotor);
+		
+		
+		
+	}
 	
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
